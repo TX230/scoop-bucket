@@ -1,0 +1,23 @@
+{
+    "version": "0.4.0",
+    "description": "Windows process investigation TUI for memory, handles, GUI and GPU resources, I/O, A/B comparison, and recording",
+    "homepage": "https://github.com/TX230/winproc-tui",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/TX230/winproc-tui/releases/download/v0.4.0/winproc-tui-0.4.0-windows-x64.zip",
+            "hash": "539619cd2b8979ee69cac619ef9fa4fc273feecd2eb76f73bb6fcc013e2b94b7"
+        }
+    },
+    "pre_install": "if (!(Test-Path \"$persist_dir\\winproc-tui.toml\")) { New-Item \"$dir\\winproc-tui.toml\" -ItemType File | Out-Null }",
+    "bin": "winproc-tui.exe",
+    "persist": "winproc-tui.toml",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/TX230/winproc-tui/releases/download/v$version/winproc-tui-$version-windows-x64.zip"
+            }
+        }
+    }
+}
